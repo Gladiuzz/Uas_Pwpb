@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="20dp"
+    android:id="@+id/cardview_1">
+
+    <RelativeLayout
+        android:id="@+id/RelativeLayout_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp">
+
+        <TextView
+            android:id="@+id/date_n_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Date"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"/>
+
+        <TextView
+            android:id="@+id/txt_Tittle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/date_n_time"
+            android:text="Tittle"
+            android:layout_marginTop="10sp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+
+        <TextView
+            android:id="@+id/txt_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="desc"
+            android:layout_below="@id/txt_Tittle"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>

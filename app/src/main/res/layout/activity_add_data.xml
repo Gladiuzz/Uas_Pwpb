@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".InsertDataActivity">
+
+    <EditText
+        android:id="@+id/edt_Tittle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Tittle"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:ems="13"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"/>
+
+    <EditText
+        android:id="@+id/edt_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Description"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:ems="13"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"/>
+
+    <Button
+        android:id="@+id/btn_submit"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:background="@android:color/holo_blue_dark"
+        android:text="Submit"
+        android:textColor="@android:color/white"/>
+    listener.onUserClick(mdata);
+
+</LinearLayout>
