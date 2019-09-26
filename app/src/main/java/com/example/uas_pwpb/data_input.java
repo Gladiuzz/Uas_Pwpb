@@ -1,31 +1,29 @@
 package com.example.uas_pwpb;
 
-import java.util.Date;
-
 public class data_input {
-    String datentime;
+    String date;
     String UserID;
     String title;
     String desription;
 
     public data_input(){
-        //method kosong
+
     }
 
 
     public data_input(String datentime, String userID, String title, String desription) {
-        this.datentime = datentime;
+        this.date = datentime;
         this.UserID = userID;
         this.title = title;
         this.desription = desription;
     }
 
-    public String getDatentime() {
-        return datentime;
+    public String getDate() {
+        return date;
     }
 
-    public void setDatentime(String datentime) {
-        this.datentime = datentime;
+    public void setDate(String date) {
+        this.date = date;
     }
 
     public String getUserID() {

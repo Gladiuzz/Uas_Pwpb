@@ -22,7 +22,6 @@ public class InsertDataActivity extends AppCompatActivity {
     Button btn_submit;
     String Data_id, ACTION,title,desc;
 
-//    public static String BUNDLE_ACTION = "bundle_action";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,20 +31,20 @@ public class InsertDataActivity extends AppCompatActivity {
         dbr = FirebaseDatabase.getInstance().getReference("Data");
         inicomponents();
 
-        Bundle bundle = getIntent().getExtras();
-        final String title = bundle.getString(NotesActivity.TITLE);
-        final String desc = bundle.getString(NotesActivity.DESC);
-        final String ACTION = bundle.getString(NotesActivity.ACTION);
+//        Bundle bundle = getIntent().getExtras();
+//        final String title = bundle.getString(NotesActivity.TITLE);
+//        final String desc = bundle.getString(NotesActivity.DESC);
+//        final String ACTION = bundle.getString(NotesActivity.ACTION);
 
-        if (ACTION == "Edit"){
-            btn_submit.setText("Edit");
-            edt_Title.setText(title);
-            edt_desc.setText(desc);
-        }
+//        if (ACTION == "Edit"){
+//            btn_submit.setText("Edit");
+//            edt_Title.setText(title);
+//            edt_desc.setText(desc);
+//        }
 
 
         addData();
-        updateData();
+//        updateData();
     }
 
     private void addData() {
@@ -54,14 +53,14 @@ public class InsertDataActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String title = edt_Title.getText().toString().trim();
                 String desc = edt_desc.getText().toString().trim();
-                SimpleDateFormat date = new SimpleDateFormat("dd/mm/yyyy' 'hh/mm/ss");
-                String date_n_time = date.format(new Date().toString());
+                SimpleDateFormat date = new SimpleDateFormat("dd/mm/yyyy' 'hh:mm:ss");
+                String date_n_time = date.format(new Date());
 
                 if (!TextUtils.isEmpty(title)) {
-                    String Id = dbr.push().getKey();
+                    String id = dbr.push().getKey();
 
-                    data_input dataInput = new data_input(date_n_time, Id, title, desc);
-                    dbr.child(Id).setValue(dataInput);
+                    data_input dataInput = new data_input(date_n_time, id, title, desc);
+                    dbr.child(id).setValue(dataInput);
 
                     Toast.makeText(InsertDataActivity.this, "Data Added ", Toast.LENGTH_SHORT).show();
                 } else {
@@ -74,7 +73,6 @@ public class InsertDataActivity extends AppCompatActivity {
     }
 
     private void updateData() {
-
         String label = btn_submit.getText().toString();
         if (label.equals("Edit")) {
             String title = edt_Title.getText().toString().trim();
